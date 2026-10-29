@@ -1,0 +1,35 @@
+[project]
+name = "cognee-community-connector-otter"
+version = "0.1.0"
+description = "Otter.ai transcript and meeting metadata document source for cognee"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    # Includes dataset-scoped document ingestion and empty-snapshot cleanup.
+    "cognee==1.6.3",
+    "dlt[sqlalchemy]>=1.9.0,<2",
+    "httpx>=0.28,<1",
+]
+
+[project.urls]
+Repository = "https://github.com/topoteretes/cognee-community"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.11"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["cognee_community_connector_otter"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "N", "B", "UP", "C4", "PGH", "SIM", "RUF"]

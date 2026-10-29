@@ -27,3 +27,6 @@ cognee_graph.pkl
 .data_storage
 *.log.DS_Store
 .DS_Store
+
+# dlt credentials remain local to the calling project
+**/.dlt/secrets.toml
